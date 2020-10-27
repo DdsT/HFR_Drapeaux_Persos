@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        [HFR] Drapeaux Persos
 // @namespace   ddst.github.io
-// @version     1.0.0
+// @version     1.0.1
 // @author      DdsT
 // @downloadURL https://ddst.github.io/HFR_Drapeaux_Persos/hfrdrapeauxpersos.user.js
 // @updateURL   https://ddst.github.io/HFR_Drapeaux_Persos/hfrdrapeauxpersos.meta.js
@@ -36,9 +36,10 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see https://ddst.github.io/hfr_ColorTag/LICENSE.
 */
 
-/* v1.0.0
+/* v1.0.1
  * ------
- * Création du script
+ * - Modification de la fonction d'import pour la compatibilité avec Firefox
+ * - Correction de la vérification d'intégrité de la BDD importée
  */
 
 /*** Paramètres du script ***/
@@ -243,7 +244,7 @@ function importDB() {
   o.id = "dp-import";
   o.type = "file";
   o.accept = ".json";
-  o.style.display = "none";
+  o.style.display = "";
   o.onchange = function(event) {
     let reader = new FileReader();
     reader.onload = function() {
@@ -262,6 +263,7 @@ function importDB() {
     };
     reader.readAsText(event.target.files[0]);
     this.value = null; // permet de recharger le même fichier
+    o.style.display = "none";
   };
   ROOT.appendChild(o);
   o.click();
@@ -276,7 +278,7 @@ function check(importedDB) {
     if (!keyOK) throw "la base de données ne contient pas les bons paramètres.";
     if (importedDB.version > VERSION) throw "le script est plus vieux que la base de données";
     for (const id in importedDB.topicTable) {
-      if (!topic[id][0]) throw "liste des topics non valide.";
+      if (!importedDB.topicTable[id][0]) throw "liste des topics non valide.";
     }
   } catch (err) {
     throw err;
