@@ -13,10 +13,10 @@ Permet de renommer le nom des sujets sur les pages favoris et drapeaux.
 ## Compatibilité
 
 - Navigateurs : 
-  - Firefox - non testé
+  - Firefox 82.0.1
   - Chrome v86.0.4240.111
 - Extensions :
-  - Greasemonkey - non testé
+  - Greasemonkey 4.10.0
   - Tampermonkey - non testé
   - Violentmonkey v2.12.7
 
