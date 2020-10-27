@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        [HFR] Drapeaux Persos
 // @namespace   ddst.github.io
-// @version     1.0.0
+// @version     1.0.1
 // @author      DdsT
 // @downloadURL https://ddst.github.io/HFR_Drapeaux_Persos/hfrdrapeauxpersos.user.js
 // @updateURL   https://ddst.github.io/HFR_Drapeaux_Persos/hfrdrapeauxpersos.meta.js
