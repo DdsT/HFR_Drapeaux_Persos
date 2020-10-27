@@ -3,6 +3,8 @@
 
 Permet de renommer le nom des sujets sur les pages favoris et drapeaux.
 
+![](demo.gif)
+
 ## Fonctionnalités
 - Renommage des sujets en cliquant sur la première case de la ligne du sujet
 - Possibilité d'utiliser des balises HTML et des émojis
